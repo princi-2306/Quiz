@@ -21,7 +21,7 @@ const userSchema = new Schema(
             required: true,
             
     },
-    userQuizs: [
+    userQuizes: [
       {
         type: Schema.Types.ObjectId,
         ref: "Quiz",

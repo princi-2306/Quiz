@@ -4,10 +4,6 @@ import mongoose, { Schema } from "mongoose";
 
 const quizSchema = new Schema(
   {
-    pdfId: {
-      type: Schema.Types.ObjectId,
-      ref: "Pdf",
-    },
     userId: {
       type: Schema.Types.ObjectId,
       ref: "User",
