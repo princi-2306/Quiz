@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from "../assets/Brain.jpeg"
 
 const Navbar = () => {
+  const [user, setUser] = useState();
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="flex-1">
