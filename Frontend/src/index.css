@@ -2,3 +2,18 @@
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark, cupcake;
 }
+
+body{
+  font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.button:hover{
+  cursor: pointer;
+  
+}
+.heading{
+  font-size: 32px;
+  color: rgb(193, 170, 170);
+  font-weight: 600;
+}

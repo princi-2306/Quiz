@@ -1,18 +1,26 @@
 import express from "express"
-import { DB_NAME } from "./constants.js"
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
-const app = express()
+const app = express();
 
+app.use(express.json());       // accepting this size of amount of json data here
+app.use(express.urlencoded({
+    extended:true
+}));
+app.use(express.static("public"))
+app.use(cookieParser())
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
     credentials: true
-}))
+})) // if cors is requested for backend to deliver the data
+//routes
 
-app.use(express.json({ limit: "16kb" }))
-app.use(express.urlencoded({ extended: true, limit: "16kb" }))
-app.use(express.static("public"))
-app.use(cookieParser())
+import userRouter from "./routes/user.routes.js"
 
-export {app}
+//routes declaration
+app.use("/api/v1/users", userRouter);
+// console.log(user);
+app.get("/", (req, res) => res.send(`Server running on port`));
+
+export default app;
